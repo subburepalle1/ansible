@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+   - name: Install Git
+     yum: name=git state=present
+   - name: git clone
+     git:
+      repo: 'https://github.com/subburepalle1/maven-web-app.git'
+      dest: /home/subbu/maven-web-app
